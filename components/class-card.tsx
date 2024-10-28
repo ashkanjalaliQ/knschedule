@@ -5,7 +5,14 @@ import {
   getClassColor,
   isCurrentClass
 } from '@/lib/utils';
-import { FaCalendarPlus, FaClock, FaDoorOpen, FaMapMarkedAlt, FaMapMarker, FaMapMarkerAlt } from 'react-icons/fa';
+import {
+  FaCalendarPlus,
+  FaClock,
+  FaDoorOpen,
+  FaMapMarkedAlt,
+  FaMapMarker,
+  FaMapMarkerAlt
+} from 'react-icons/fa';
 import { FaLocationPin } from 'react-icons/fa6';
 import { BiLocationPlus } from 'react-icons/bi';
 import { Clock } from 'lucide-react';
@@ -33,26 +40,29 @@ const ClassCard: React.FC<ClassCardProps> = ({ classItem, index }) => {
           <h4 className="font-semibold text-gray-800">{classItem.title}</h4>
         </div>
         <span className="text-sm text-gray-600 flex flex-row">
-          <Clock className="text-xs w-4 h-4 ml-1"/>
+          <Clock className="text-xs w-4 h-4 ml-1" />
           {classItem.startTime} - {classItem.endTime}
         </span>
       </div>
       <div className="space-y-2 text-sm text-gray-600">
         <div className="flex items-center">
-          <FaMapMarkerAlt className="w-5 ml-1 text-indigo-500"/>
+          <FaMapMarkerAlt className="w-5 ml-1 text-indigo-500" />
           <span>{classItem.location}</span>
         </div>
-        <div className="flex items-center">
-          <FaDoorOpen className="w-5 ml-1 text-indigo-500"/>
-          <span>{classItem.room}</span>
+        <div className="flex items-center justify-between">
+          <div className='flex flex-row'>
+            <FaDoorOpen className="w-5 ml-1 text-indigo-500" />
+            <span>{classItem.room}</span>
+          </div>
+
+          <button
+            className="px-3 py-1 text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-600 rounded-full transition-colors duration-300 flex items-center group"
+            onClick={handleAddToGoogleCalendar}
+          >
+            <FaCalendarPlus className="ml-1 group-hover:scale-110 transition-transform duration-300" />
+            افزودن به گوگل کلندر
+          </button>
         </div>
-        <button
-          className="px-3 py-1 text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-600 rounded-full transition-colors duration-300 flex items-center group"
-          onClick={handleAddToGoogleCalendar}
-        >
-          <FaCalendarPlus className='ml-1 group-hover:scale-110 transition-transform duration-300'/>
-          افزودن به گوگل کلندر
-        </button>
       </div>
     </div>
   );
