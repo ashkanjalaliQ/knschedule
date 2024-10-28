@@ -32,6 +32,12 @@ const scheduleData = {
                 ]
             },
             {
+                name: 'دوشنبه',
+                classes: [
+                    
+                ]
+            },
+            {
                 name: 'سه‌شنبه',
                 classes: [
                     { title: 'ریاضی عمومی ۱', startTime: '09:00', endTime: '10:30', location: 'دانشکده برق و کامپیوتر، ساختمان صنایع', room: 'کلاس ج' },
@@ -45,6 +51,18 @@ const scheduleData = {
                     { title: 'اقتصاد عمومی ۱', startTime: '09:00', endTime: '10:30', location: 'دانشکده صنایع و مکانیک', room: 'کلاس ۲۰۸' },
                     { title: 'نقشه کشی صنعتی', startTime: '10:30', endTime: '12:00', location: 'دانشکده صنایع و مکانیک', room: 'کلاس ۱۱۴' },
                     { title: 'جبرانی فیزیک ۱', startTime: '15:00', endTime: '18:00', location: 'دانشکده صنایع و مکانیک', room: 'نامشخص' },
+                ]
+            },
+            {
+                name: 'پنجشنبه',
+                classes: [
+                    
+                ]
+            },
+            {
+                name: 'جمعه',
+                classes: [
+                    
                 ]
             },
         ],
@@ -65,6 +83,12 @@ const scheduleData = {
                 ]
             },
             {
+                name: 'دوشنبه',
+                classes: [
+                    
+                ]
+            },
+            {
                 name: 'سه‌شنبه',
                 classes: [
                     { title: 'ریاضی عمومی ۱', startTime: '07:30', endTime: '09:00', location: 'دانشکده برق و کامپیوتر، ساختمان صنایع', room: 'کلاس د' },
@@ -78,6 +102,18 @@ const scheduleData = {
                     { title: 'اقتصاد عمومی ۱', startTime: '07:30', endTime: '09:00', location: 'دانشکده صنایع و مکانیک', room: 'کلاس ۲۰۸' },
                     { title: 'نقشه کشی صنعتی', startTime: '09:00', endTime: '10:30', location: 'دانشکده صنایع و مکانیک', room: 'کلاس ۱۱۴' },
                     { title: 'جبرانی فیزیک ۱', startTime: '15:00', endTime: '18:00', location: 'دانشکده صنایع و مکانیک', room: 'نامشخص' },
+                ]
+            },
+            {
+                name: 'پنجشنبه',
+                classes: [
+                    
+                ]
+            },
+            {
+                name: 'جمعه',
+                classes: [
+                    
                 ]
             },
         ]
