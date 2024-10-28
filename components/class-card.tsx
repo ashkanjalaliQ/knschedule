@@ -5,6 +5,10 @@ import {
   getClassColor,
   isCurrentClass
 } from '@/lib/utils';
+import { FaCalendarPlus, FaClock, FaDoorOpen, FaMapMarkedAlt, FaMapMarker, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaLocationPin } from 'react-icons/fa6';
+import { BiLocationPlus } from 'react-icons/bi';
+import { Clock } from 'lucide-react';
 
 interface ClassCardProps {
   classItem: ClassItem;
@@ -28,25 +32,25 @@ const ClassCard: React.FC<ClassCardProps> = ({ classItem, index }) => {
           ></div>
           <h4 className="font-semibold text-gray-800">{classItem.title}</h4>
         </div>
-        <span className="text-sm text-gray-600">
-          <i className="far fa-clock ml-1"></i>
+        <span className="text-sm text-gray-600 flex flex-row">
+          <Clock className="text-xs w-4 h-4 ml-1"/>
           {classItem.startTime} - {classItem.endTime}
         </span>
       </div>
       <div className="space-y-2 text-sm text-gray-600">
         <div className="flex items-center">
-          <i className="fas fa-map-marker-alt w-5 text-indigo-500"></i>
+          <FaMapMarkerAlt className="w-5 ml-1 text-indigo-500"/>
           <span>{classItem.location}</span>
         </div>
         <div className="flex items-center">
-          <i className="fas fa-door-open w-5 text-indigo-500"></i>
+          <FaDoorOpen className="w-5 ml-1 text-indigo-500"/>
           <span>{classItem.room}</span>
         </div>
         <button
           className="px-3 py-1 text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-600 rounded-full transition-colors duration-300 flex items-center group"
           onClick={handleAddToGoogleCalendar}
         >
-          <i className="fas fa-calendar-plus ml-1 group-hover:scale-110 transition-transform duration-300"></i>
+          <FaCalendarPlus className='ml-1 group-hover:scale-110 transition-transform duration-300'/>
           افزودن به گوگل کلندر
         </button>
       </div>

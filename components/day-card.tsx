@@ -2,6 +2,7 @@ import React from 'react';
 import { Day } from '@/lib/types';
 import Timeline from '@/components/timeline';
 import ClassCard from '@/components/class-card';
+import { BiCalendarX } from 'react-icons/bi';
 
 interface DayCardProps {
   day: Day;
@@ -28,8 +29,8 @@ const DayCard: React.FC<DayCardProps> = ({ day, isToday }) => {
         <Timeline day={day} />
         <div className="space-y-4">
           {day.classes.length === 0 ? (
-            <div className="text-center py-8 text-gray-500">
-              <i className="far fa-calendar-xmark text-3xl mb-2"></i>
+            <div className="text-center flex flex-col items-center py-8 text-gray-500">
+              <BiCalendarX className="text-center fa-calendar-xmark text-4xl mb-2" />
               <p>کلاسی برای این روز وجود ندارد</p>
             </div>
           ) : (
