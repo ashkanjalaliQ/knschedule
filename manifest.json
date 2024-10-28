@@ -1,7 +1,7 @@
 {
-    "name": "برنامه هفتگی دانشگاه",
-    "short_name": "برنامه هفتگی",
-    "description": "برنامه هفتگی دانشجویان",
+    "name": "knschedule",
+    "short_name": "knschedule",
+    "description": "برنامه هفتگی دانشجویان صنایع",
     "start_url": "./",
     "scope": ".",
     "display": "standalone",
