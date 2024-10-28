@@ -58,9 +58,6 @@
       deferredPrompt = e;
       // Show your custom install button
       showInstallButton();
-      if (isSafari() && !navigator.standalone) {
-        showIOSInstallInstructions();
-      }
     });
 
     function showInstallButton() {
@@ -90,39 +87,6 @@
 
       document.body.appendChild(installButton);
     }
-  </script>
-  <script>
-    function isSafari() {
-      return navigator.userAgent.includes("Safari") &&
-        !navigator.userAgent.includes("Chrome") &&
-        navigator.vendor.includes("Apple");
-    }
-
-    function showIOSInstallInstructions() {
-      const installInstructions = document.createElement('div');
-      installInstructions.classList.add(
-        'fixed', 'top-0', 'left-0', 'right-0', 'p-4', 'bg-indigo-600', 'text-white', 'flex', 'items-center', 'justify-between'
-      );
-      installInstructions.innerHTML = `
-        <div>
-          <p class="font-medium mb-2">برای نصب برنامه:</p>
-          <ol class="list-decimal list-inside text-sm">
-            <li>گزینه Share را در نوار پایین بزنید</li>
-            <li>گزینه "Add to Home Screen" را انتخاب کنید</li>
-            <li>روی "Add" در گوشه بالا سمت راست بزنید</li>
-          </ol>
-        </div>
-        <button id="installInstructionsClose" class="px-4 py-2 bg-indigo-800 rounded-lg font-medium">
-          فهمیدم
-        </button>
-      `;
-      document.body.appendChild(installInstructions);
-
-      document.getElementById('installInstructionsClose').addEventListener('click', () => {
-        installInstructions.remove();
-      });
-    }
-
   </script>
 </head>
 
