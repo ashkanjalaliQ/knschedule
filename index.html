@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="icon.png">
+  <link rel="icon" type="image/x-icon" href="icons/icon.png">
   <title>برنامه هفتگی</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,147 +17,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-  <style>
-    :root {
-      --timeline-start: 7.5;
-      --timeline-end: 18;
-      --timeline-duration: 10.5;
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="description" content="برنامه هفتگی دانشجویان">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="برنامه هفتگی">
+  <link rel="apple-touch-icon" href="icons/icon-152x152.png">
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('ServiceWorker registration successful');
+          })
+          .catch(err => {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
     }
-
-    body {
-      font-family: Vazirmatn, sans-serif;
-    }
-
-    .glass-effect {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .dark .glass-effect {
-      background: rgba(17, 24, 39, 0.7);
-      border-color: rgba(55, 65, 81, 0.2);
-    }
-
-    .soft-shadow {
-      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-    }
-
-    .dark .soft-shadow {
-      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.2);
-    }
-
-    .gradient-indigo {
-      background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
-    }
-
-    .gradient-yellow {
-      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-    }
-
-    .animate-skeleton {
-      animation: skeleton-loading 1s linear infinite alternate;
-    }
-
-    @keyframes skeleton-loading {
-      0% {
-        background-color: rgba(156, 163, 175, 0.1);
-      }
-
-      100% {
-        background-color: rgba(156, 163, 175, 0.2);
-      }
-    }
-
-    :root {
-      --skeleton-from: rgba(156, 163, 175, 0.1);
-      --skeleton-to: rgba(156, 163, 175, 0.2);
-    }
-
-    .dark {
-      --skeleton-from: rgba(55, 65, 81, 0.1);
-      --skeleton-to: rgba(55, 65, 81, 0.2);
-    }
-
-    @keyframes skeleton-loading {
-      0% {
-        background-color: var(--skeleton-from);
-      }
-
-      100% {
-        background-color: var(--skeleton-to);
-      }
-    }
-
-    .animate-skeleton {
-      animation: skeleton-loading 1s linear infinite alternate;
-    }
-
-    .pulse {
-      animation: pulse 2s infinite;
-    }
-
-    .fade-in {
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    .slide-in {
-      animation: slideIn 0.5s ease-out;
-    }
-
-    .timeline-grid {
-      background-image: linear-gradient(to left, rgba(229, 231, 235, 0.5) 1px, transparent 1px);
-      background-size: calc(100% / 12) 100%;
-    }
-
-    .dark .timeline-grid {
-      background-image: linear-gradient(to left, rgba(55, 65, 81, 0.5) 1px, transparent 1px);
-    }
-
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.7);
-      }
-
-      70% {
-        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-      }
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideIn {
-      0% {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .hover-scale {
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .hover-scale:hover {
-      transform: scale(1.02);
-    }
-  </style>
+  </script>
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- Initialize dark mode -->
   <script>
@@ -165,6 +46,46 @@
       document.documentElement.classList.add('dark')
     } else {
       document.documentElement.classList.remove('dark')
+    }
+  </script>
+  <script>
+    let deferredPrompt;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+      // Show your custom install button
+      showInstallButton();
+    });
+
+    function showInstallButton() {
+      // Add a button or notification to prompt installation
+      const installButton = document.createElement('button');
+      installButton.classList.add(
+        'fixed', 'bottom-4', 'right-4', 'px-4', 'py-2',
+        'bg-indigo-600', 'text-white', 'rounded-full',
+        'shadow-lg', 'flex', 'items-center', 'space-x-2'
+      );
+      installButton.innerHTML = `
+            <i class="fas fa-download ml-2"></i>
+            <span>نصب برنامه</span>
+        `;
+
+      installButton.addEventListener('click', async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          if (outcome === 'accepted') {
+            console.log('User accepted the install prompt');
+          }
+          deferredPrompt = null;
+          installButton.remove();
+        }
+      });
+
+      document.body.appendChild(installButton);
     }
   </script>
 </head>
@@ -343,8 +264,7 @@
                         class="px-3 py-1 text-xs bg-indigo-50 dark:bg-indigo-900/50 hover:bg-indigo-100 dark:hover:bg-indigo-900/70 text-indigo-600 dark:text-indigo-400 rounded-full transition-colors duration-300 flex items-center group">
                         <i
                           class="fas fa-calendar-plus ml-1 group-hover:scale-110 transition-transform duration-300"></i>
-                        <span
-                          x-text="'افزودن به گوگل کلندر'"></span>
+                        <span x-text="'افزودن به گوگل کلندر'"></span>
                       </button>
                     </div>
 
