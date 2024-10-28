@@ -5,7 +5,7 @@ import { Vazirmatn } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'Harmony'
+  title: 'برنامه هفتگی صنایع'
 };
 
 const font = Vazirmatn({
