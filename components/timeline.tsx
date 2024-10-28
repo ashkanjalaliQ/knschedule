@@ -19,7 +19,7 @@ const Timeline: React.FC<TimelineProps> = ({ day }) => {
           <div
             key={index}
             className={`absolute h-6 bottom-1 rounded ${isCurrentClass(classItem) ? 'ring-2 ring-yellow-400' : ''}`}
-            style={getTimeBlockStyle(classItem)}
+            style={getTimeBlockStyle(classItem, index)}
           />
         ))}
       </div>

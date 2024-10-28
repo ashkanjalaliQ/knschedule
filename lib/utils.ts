@@ -56,14 +56,15 @@ export const getOrderedSchedule = (schedule: Day[]): Day[] => {
 export const isToday = (index: number): boolean => index === 0;
 
 export const getTimeBlockStyle = (
-  classItem: ClassItem
+  classItem: ClassItem,
+  index: number
 ): React.CSSProperties => {
   const start = parseTimeToPosition(classItem.startTime);
   const end = parseTimeToPosition(classItem.endTime);
   return {
-    left: `${start}%`,
-    right: `${100 - end}%`,
-    backgroundColor: '#4F46E5'
+    right: `${start}%`,
+    left: `${100 - end}%`,
+    backgroundColor: getClassColor(index)
   };
 };
 
