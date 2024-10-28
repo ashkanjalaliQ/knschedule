@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="icons/icon.png">
-  <title >برنامه هفتگی صنایع</title>
+  <title>برنامه هفتگی صنایع</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -58,6 +58,9 @@
       deferredPrompt = e;
       // Show your custom install button
       showInstallButton();
+      if (isIOS() && !navigator.standalone) {
+        showIOSInstallInstructions();
+      }
     });
 
     function showInstallButton() {
@@ -87,6 +90,45 @@
 
       document.body.appendChild(installButton);
     }
+  </script>
+  <script>
+    function isIOS() {
+      return [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+      ].includes(navigator.platform)
+        || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+    }
+
+    function showIOSInstallInstructions() {
+      const installInstructions = document.createElement('div');
+      installInstructions.classList.add(
+        'fixed', 'top-0', 'left-0', 'right-0', 'p-4', 'bg-indigo-600', 'text-white', 'flex', 'items-center', 'justify-between'
+      );
+      installInstructions.innerHTML = `
+        <div>
+          <p class="font-medium mb-2">برای نصب برنامه:</p>
+          <ol class="list-decimal list-inside text-sm">
+            <li>گزینه Share را در نوار پایین بزنید</li>
+            <li>گزینه "Add to Home Screen" را انتخاب کنید</li>
+            <li>روی "Add" در گوشه بالا سمت راست بزنید</li>
+          </ol>
+        </div>
+        <button id="installInstructionsClose" class="px-4 py-2 bg-indigo-800 rounded-lg font-medium">
+          فهمیدم
+        </button>
+      `;
+      document.body.appendChild(installInstructions);
+
+      document.getElementById('installInstructionsClose').addEventListener('click', () => {
+        installInstructions.remove();
+      });
+    }
+
   </script>
 </head>
 
