@@ -1,7 +1,7 @@
 import {
   countClassesForToday,
   getTotalClassDurationInHours,
-  getNextClass // Import the new function
+  getNextClass
 } from '@/lib/utils';
 import { useState, useEffect } from 'react';
 import StatsItem from './stats-item';
@@ -25,7 +25,7 @@ const Stats: React.FC<StatsProps> = ({ gender }) => {
     if (upcomingClass) {
       setNextClass(`${upcomingClass.title} (${upcomingClass.startTime})`);
     } else {
-      setNextClass('کلاسی وجود ندارد'); // Handle case when no class is available
+      setNextClass('کلاس های امروز تموم شدند');
     }
   }, [gender]);
 
@@ -38,7 +38,6 @@ const Stats: React.FC<StatsProps> = ({ gender }) => {
         />
         <StatsItem label="کلاس‌های امروز" value={todayClassCount} />
         <StatsItem label="کلاس بعدی" value={nextClass || undefined} />{' '}
-        {/* Display next class */}
       </div>
     </div>
   );
