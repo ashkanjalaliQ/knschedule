@@ -58,7 +58,7 @@
       deferredPrompt = e;
       // Show your custom install button
       showInstallButton();
-      if (isIOS() && !navigator.standalone) {
+      if (isSafari() && !navigator.standalone) {
         showIOSInstallInstructions();
       }
     });
