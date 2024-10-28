@@ -120,7 +120,6 @@ const dayMapping = [
 export const getNextClass = (gender: 'boys' | 'girls'): ClassItem | null => {
   const todayIndex = new Date().getDay();
   const todayName = dayMapping[todayIndex + 1];
-  console.log(todayName);
   const classesForGender = scheduleData.schedule[gender];
 
   const todayClasses =
