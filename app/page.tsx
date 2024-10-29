@@ -29,7 +29,7 @@ export default function Home() {
       <Header />
       <Stats gender={gender} />
       <Actions gender={gender} setGender={setGender} />
-      <Schedule gender={gender} scheduleData={scheduleData}/>.
+      <Schedule gender={gender} scheduleData={scheduleData}/>
     </div>
   );
 }
