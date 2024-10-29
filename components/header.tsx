@@ -32,6 +32,7 @@ const Header = () => {
       <p className="text-gray-600 dark:text-gray-200">ترم اول ۱۴۰۴-۱۴۰۳</p>
       <button
         onClick={toggleDarkMode}
+        aria-label='Toggle Dark Mode'
         className="absolute top-0 left-0 m-6 p-2 z-50 bg-gray-100 dark:bg-gray-900 rounded-full shadow-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-100 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
         {isDarkMode ? <FaMoon/> : <FaSun/>}
