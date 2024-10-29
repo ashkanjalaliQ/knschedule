@@ -3,11 +3,12 @@ import Actions from '@/components/actions';
 import Header from '@/components/header';
 import Schedule from '@/components/schedule';
 import Stats from '@/components/stats';
+import scheduleData from '@/lib/data';
 import { getGenderFromLocalStorage } from '@/lib/storage';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const [gender, setGender] = useState<'boys' | 'girls'>('boys'); // Default to boys or get initial value from local storage
+  const [gender, setGender] = useState<'boys' | 'girls'>('boys');
 
   useEffect(() => {
     const storedGender = getGenderFromLocalStorage();
@@ -28,7 +29,7 @@ export default function Home() {
       <Header />
       <Stats gender={gender} />
       <Actions gender={gender} setGender={setGender} />
-      <Schedule gender={gender} />.
+      <Schedule gender={gender} scheduleData={scheduleData}/>.
     </div>
   );
 }
