@@ -71,7 +71,7 @@ export const getTimeBlockStyle = (
 const parseTimeToPosition = (time: string): number => {
   const [hours, minutes] = time.split(':').map(Number);
   const totalMinutes = hours * 60 + minutes;
-  const startOfDay = 7 * 60;
+  const startOfDay = 7 * 60 + 30;
   const endOfDay = 18 * 60;
   return ((totalMinutes - startOfDay) / (endOfDay - startOfDay)) * 100;
 };
