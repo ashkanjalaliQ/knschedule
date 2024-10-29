@@ -1,4 +1,3 @@
-// types.ts
 export interface ClassItem {
   title: string;
   startTime: string;
