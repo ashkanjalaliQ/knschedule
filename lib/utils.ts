@@ -85,7 +85,6 @@ export const isCurrentClass = (classItem: ClassItem): boolean => {
   const currentMinutes = now.getHours() * 60 + now.getMinutes();
   const startMinutes = convertTimeToMinutes(classItem.startTime);
   const endMinutes = convertTimeToMinutes(classItem.endTime);
-  console.log(currentMinutes, startMinutes, currentMinutes, endMinutes)
   return currentMinutes >= startMinutes && currentMinutes < endMinutes;
 };
 
@@ -143,4 +142,49 @@ export const getNextClass = (gender: 'boys' | 'girls'): ClassItem | null => {
     .sort((a, b) => a.startTimeInMinutes - b.startTimeInMinutes)[0];
 
   return nextClass || null;
+};
+
+export const parseTime = (time: string): Date => {
+  const [hours, minutes] = time.split(":").map(Number);
+  const now = new Date();
+  now.setHours(hours, minutes, 0, 0);
+  return now;
+};
+
+export const getCurrentClass = (gender: 'boys' | 'girls'): ClassItem | null => {
+  const todayIndex = getTodayIndex();
+  const todayClasses = scheduleData.schedule[gender][todayIndex]?.classes || [];
+  const now = new Date();
+
+  return todayClasses.find((classItem) => {
+    const start = parseTime(classItem.startTime);
+    const end = parseTime(classItem.endTime);
+    return now >= start && now < end;
+  }) || null;
+};
+
+export const getRemainingTimeForClass = (classItem: ClassItem): string => {
+  const now = new Date();
+  const endTime = parseTime(classItem.endTime);
+
+  if (now >= endTime) return "0 دقیقه";
+
+  const remainingMinutes = Math.round((endTime.getTime() - now.getTime()) / (1000 * 60));
+  return `${remainingMinutes} دقیقه`;
+};
+
+export const getTimeUntilNextClass = (gender: 'boys' | 'girls'): string | null => {
+  const todayIndex = getTodayIndex();
+  const todayClasses = scheduleData.schedule[gender][todayIndex]?.classes || [];
+
+  const now = new Date();
+
+  for (const classItem of todayClasses) {
+    const startTime = parseTime(classItem.startTime);
+    if (now < startTime) {
+      const remainingMinutes = Math.round((startTime.getTime() - now.getTime()) / (1000 * 60));
+      return `تا ${remainingMinutes} دقیقه دیگر شروع میشود`;
+    }
+  }
+  return todayClasses.length > 1 ? "خسته نباشی:)" : "تا فردا";
 };
