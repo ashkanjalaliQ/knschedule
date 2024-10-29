@@ -1,27 +1,27 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 
 const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(() => {
-    const darkModePreference = localStorage.getItem('darkMode');
-    if (darkModePreference === 'true') {
-      setIsDarkMode(true);
-      document.documentElement.classList.add('dark');
-    }
-  }, []);
+  // useEffect(() => {
+  //   const darkModePreference = localStorage.getItem('darkMode');
+  //   if (darkModePreference === 'true') {
+  //     setIsDarkMode(true);
+  //     document.documentElement.classList.add('dark');
+  //   }
+  // }, []);
 
-  const toggleDarkMode = () => {
-    const newDarkModeValue = !isDarkMode;
-    setIsDarkMode(newDarkModeValue);
-    localStorage.setItem('darkMode', String(newDarkModeValue));
+  // const toggleDarkMode = () => {
+  //   const newDarkModeValue = !isDarkMode;
+  //   setIsDarkMode(newDarkModeValue);
+  //   localStorage.setItem('darkMode', String(newDarkModeValue));
 
-    if (newDarkModeValue) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
+  //   if (newDarkModeValue) {
+  //     document.documentElement.classList.add('dark');
+  //   } else {
+  //     document.documentElement.classList.remove('dark');
+  //   }
+  // };
 
   return (
     <header className="text-center mb-8 fade-in">
