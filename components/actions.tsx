@@ -1,10 +1,9 @@
-// components/Actions.tsx
 import { Dispatch, SetStateAction } from 'react';
 import { saveGenderToLocalStorage } from '../lib/storage';
 import { FaFemale, FaMale } from 'react-icons/fa';
 
 interface ActionsProps {
-  gender: 'boys' | 'girls'; // Receive the current gender as a prop
+  gender: 'boys' | 'girls';
   setGender: Dispatch<SetStateAction<'boys' | 'girls'>>;
 }
 
