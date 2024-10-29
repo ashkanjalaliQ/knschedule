@@ -82,8 +82,11 @@ export const getClassColor = (index: number): string => {
 
 export const isCurrentClass = (classItem: ClassItem): boolean => {
   const now = new Date();
-  const currentTime = `${now.getHours()}:${now.getMinutes()}`;
-  return currentTime >= classItem.startTime && currentTime < classItem.endTime;
+  const currentMinutes = now.getHours() * 60 + now.getMinutes();
+  const startMinutes = convertTimeToMinutes(classItem.startTime);
+  const endMinutes = convertTimeToMinutes(classItem.endTime);
+  console.log(currentMinutes, startMinutes, currentMinutes, endMinutes)
+  return currentMinutes >= startMinutes && currentMinutes < endMinutes;
 };
 
 export const formatTimeRange = (start: string, end: string): string => {

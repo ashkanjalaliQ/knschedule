@@ -26,7 +26,7 @@ const DayCard: React.FC<DayCardProps> = ({ day, isToday }) => {
       </div>
 
       <div className="p-4">
-        <Timeline day={day} />
+        <Timeline day={day} isToday={isToday}/>
         <div className="space-y-4">
           {day.classes.length === 0 ? (
             <div className="text-center flex flex-col items-center py-8 text-gray-500">
@@ -35,7 +35,7 @@ const DayCard: React.FC<DayCardProps> = ({ day, isToday }) => {
             </div>
           ) : (
             day.classes.map((classItem, index) => (
-              <ClassCard key={index} classItem={classItem} index={index} />
+              <ClassCard key={index} classItem={classItem} index={index} isToday={isToday}/>
             ))
           )}
         </div>

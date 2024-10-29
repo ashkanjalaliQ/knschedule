@@ -3,7 +3,7 @@ import { ClassItem } from '@/lib/types';
 import {
   createGoogleCalendarLink,
   getClassColor,
-  isCurrentClass
+  isCurrentClass,
 } from '@/lib/utils';
 import {
   FaCalendarPlus,
@@ -15,16 +15,17 @@ import { Clock } from 'lucide-react';
 interface ClassCardProps {
   classItem: ClassItem;
   index: number;
+  isToday: boolean;
 }
 
-const ClassCard: React.FC<ClassCardProps> = ({ classItem, index }) => {
+const ClassCard: React.FC<ClassCardProps> = ({ classItem, index, isToday }) => {
   const handleAddToGoogleCalendar = () => {
     const link = createGoogleCalendarLink(classItem);
     window.open(link, '_blank');
   };
   return (
     <div
-      className={`bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-300 ${isCurrentClass(classItem) ? 'ring-2 ring-indigo-500' : ''}`}
+      className={`bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-300 ${isCurrentClass(classItem) && isToday ? 'ring-2 ring-indigo-500' : ''}`}
     >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center">

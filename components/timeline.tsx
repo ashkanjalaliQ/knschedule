@@ -1,12 +1,13 @@
 import React from 'react';
 import { Day } from '@/lib/types';
-import { getTimeBlockStyle, isCurrentClass, timeLabels } from '@/lib/utils';
+import { getTimeBlockStyle, getTodayIndex, isCurrentClass, timeLabels } from '@/lib/utils';
 
 interface TimelineProps {
   day: Day;
+  isToday: boolean;
 }
 
-const Timeline: React.FC<TimelineProps> = ({ day }) => {
+const Timeline: React.FC<TimelineProps> = ({ day, isToday }) => {
   return (
     <div className="mb-6 relative">
       <div className="h-12 bg-gray-50 rounded-lg overflow-hidden timeline-grid">
@@ -18,7 +19,10 @@ const Timeline: React.FC<TimelineProps> = ({ day }) => {
         {day.classes.map((classItem, index) => (
           <div
             key={index}
-            className={`absolute h-6 bottom-1 rounded ${isCurrentClass(classItem) ? 'ring-2 ring-yellow-400' : ''}`}
+            onClick={()=>{
+              console.log(index)
+            }}
+            className={`absolute h-6 bottom-1 rounded ${isCurrentClass(classItem) && isToday  ? 'ring-2 ring-yellow-400' : ''}`}
             style={getTimeBlockStyle(classItem, index)}
           />
         ))}
