@@ -7,14 +7,9 @@ import {
 } from '@/lib/utils';
 import {
   FaCalendarPlus,
-  FaClock,
   FaDoorOpen,
-  FaMapMarkedAlt,
-  FaMapMarker,
   FaMapMarkerAlt
 } from 'react-icons/fa';
-import { FaLocationPin } from 'react-icons/fa6';
-import { BiLocationPlus } from 'react-icons/bi';
 import { Clock } from 'lucide-react';
 
 interface ClassCardProps {
@@ -25,7 +20,7 @@ interface ClassCardProps {
 const ClassCard: React.FC<ClassCardProps> = ({ classItem, index }) => {
   const handleAddToGoogleCalendar = () => {
     const link = createGoogleCalendarLink(classItem);
-    window.open(link, '_blank'); // Open in a new tab
+    window.open(link, '_blank');
   };
   return (
     <div
