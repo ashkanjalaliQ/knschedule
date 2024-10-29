@@ -16,7 +16,7 @@ const DayCard: React.FC<DayCardProps> = ({ day, isToday }) => {
     >
       <div className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white p-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-xl font-bold">{day.name}</h3>
+          <p className="text-xl font-bold">{day.name}</p>
           {isToday && (
             <span className="bg-yellow-400 text-indigo-900 px-3 py-1 rounded-full text-sm font-medium">
               امروز

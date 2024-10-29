@@ -91,9 +91,6 @@
 .gradient-yellow {
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
 }
-.animate-skeleton {
-  @apply animate-[skeleton-loading_1s_linear_infinite_alternate] animate-[skeleton-loading_1s_linear_infinite_alternate];
-}
 .dark {
   --skeleton-from: rgba(55, 65, 81, 0.1);
   --skeleton-to: rgba(55, 65, 81, 0.2);

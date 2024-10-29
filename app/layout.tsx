@@ -5,7 +5,12 @@ import { Vazirmatn } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-  title: 'برنامه هفتگی صنایع'
+  title: 'برنامه هفتگی صنایع',
+  description: 'برنامه هفتگی دانشجویان رشته مهندسی صنایع',
+  robots: {
+    index: false,
+    follow: false
+  }
 };
 
 const font = Vazirmatn({
