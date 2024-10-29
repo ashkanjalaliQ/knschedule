@@ -25,7 +25,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ classItem, index, isToday }) => {
   };
   return (
     <div
-      className={`bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-300 ${isCurrentClass(classItem) && isToday ? 'ring-2 ring-indigo-500' : ''}`}
+      className={`bg-gray-50 rounded-lg p-4 dark:bg-gray-800 hover:bg-gray-100 transition-colors duration-300 ${isCurrentClass(classItem) && isToday ? 'ring-2 ring-indigo-500' : ''}`}
     >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center">
@@ -33,14 +33,14 @@ const ClassCard: React.FC<ClassCardProps> = ({ classItem, index, isToday }) => {
             className="w-3 h-3 rounded-full ml-2"
             style={{ backgroundColor: getClassColor(index) }}
           ></div>
-          <h4 className="font-semibold text-gray-800">{classItem.title}</h4>
+          <h4 className="font-semibold text-gray-800 dark:text-white">{classItem.title}</h4>
         </div>
-        <span className="text-sm text-gray-600 flex flex-row">
+        <span className="text-sm text-gray-600 flex flex-row dark:text-gray-400">
           <Clock className="text-xs w-4 h-4 ml-1" />
           {classItem.startTime} - {classItem.endTime}
         </span>
       </div>
-      <div className="space-y-2 text-sm text-gray-600">
+      <div className="space-y-2 text-sm text-gray-600 dark:text-white">
         <div className="flex items-center">
           <FaMapMarkerAlt className="w-5 ml-1 text-indigo-500" />
           <span>{classItem.location}</span>
@@ -52,7 +52,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ classItem, index, isToday }) => {
           </div>
 
           <button
-            className="px-3 py-1 text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-600 rounded-full transition-colors duration-300 flex items-center group"
+            className="px-3 py-1 text-xs bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-200 hover:shadow-md text-indigo-600 rounded-full transition-all duration-200 focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 flex items-center group"
             onClick={handleAddToGoogleCalendar}
           >
             <FaCalendarPlus className="ml-1 group-hover:scale-110 transition-transform duration-300" />

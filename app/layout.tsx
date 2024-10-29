@@ -22,7 +22,7 @@ export default async function RootLayout({
       <body
         dir="rtl"
         className={cn(
-          'min-h-screen bg-gradient-to-br from-blue-200 via-indigo-100 to-gray-100 dark:from-gray-700 dark:via-gray-700 dark:to-gray-600 transition-colors duration-300',
+          'min-h-screen bg-gradient-to-br from-blue-200 via-indigo-100 to-gray-100 dark:from-gray-800 dark:to-gray-700 transition-colors duration-300',
           font.className
         )}
       >
