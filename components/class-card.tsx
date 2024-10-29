@@ -33,7 +33,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ classItem, index, isToday }) => {
             className="w-3 h-3 rounded-full ml-2"
             style={{ backgroundColor: getClassColor(index) }}
           ></div>
-          <h4 className="font-semibold text-gray-800 dark:text-white">{classItem.title}</h4>
+          <p className="font-semibold text-gray-800 dark:text-white">{classItem.title}</p>
         </div>
         <span className="text-sm text-gray-600 flex flex-row dark:text-gray-400">
           <Clock className="text-xs w-4 h-4 ml-1" />
