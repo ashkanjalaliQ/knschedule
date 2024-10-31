@@ -28,7 +28,7 @@ const scheduleData = {
                 classes: [
                     { title: 'ریاضی عمومی ۱', startTime: '09:00', endTime: '10:30', location: 'دانشکده برق و کامپیوتر، ساختمان صنایع', room: 'کلاس ج' },
                     { title: 'فیزیک ۱', startTime: '10:30', endTime: '12:00', location: 'دانشکده برق و کامپیوتر، ساختمان صنایع', room: 'کلاس ج' },
-                    { title: 'زبان فارسی ۱', startTime: '13:30', endTime: '15:00', location: 'دانشکده برق و کامپیوتر، ساختمان برق', room: 'طبقه ۲' }
+                    { title: 'زبان فارسی ۱', startTime: '13:30', endTime: '15:00', location: 'دانشکده برق و کامپیوتر، ساختمان برق', room: 'کلاس ۲۰۸' }
                 ]
             },
             {
@@ -42,7 +42,7 @@ const scheduleData = {
                 classes: [
                     { title: 'ریاضی عمومی ۱', startTime: '09:00', endTime: '10:30', location: 'دانشکده برق و کامپیوتر، ساختمان صنایع', room: 'کلاس ج' },
                     { title: 'فیزیک ۱', startTime: '10:30', endTime: '12:00', location: 'دانشکده برق و کامپیوتر، ساختمان صنایع', room: 'کلاس ج' },
-                    { title: 'زبان فارسی ۱', startTime: '13:30', endTime: '15:00', location: 'دانشکده برق و کامپیوتر، ساختمان برق', room: 'طبقه ۲' }
+                    { title: 'زبان فارسی ۱', startTime: '13:30', endTime: '15:00', location: 'دانشکده برق و کامپیوتر، ساختمان برق', room: 'کلاس ۲۰۸' }
                 ]
             },
             {
@@ -50,7 +50,7 @@ const scheduleData = {
                 classes: [
                     { title: 'اقتصاد عمومی ۱', startTime: '09:00', endTime: '10:30', location: 'دانشکده صنایع و مکانیک', room: 'کلاس ۲۰۸' },
                     { title: 'نقشه کشی صنعتی', startTime: '10:30', endTime: '12:00', location: 'دانشکده صنایع و مکانیک', room: 'کلاس ۱۱۴' },
-                    { title: 'جبرانی فیزیک ۱', startTime: '15:00', endTime: '18:00', location: 'دانشکده صنایع و مکانیک', room: 'نامشخص' },
+                    { title: 'جبرانی فیزیک ۱', startTime: '15:00', endTime: '18:00', location: 'دانشکده صنایع و مکانیک', room: 'کلاس ۲۰۴' },
                 ]
             },
             {
@@ -79,7 +79,7 @@ const scheduleData = {
                 classes: [
                     { title: 'ریاضی عمومی ۱', startTime: '07:30', endTime: '09:00', location: 'دانشکده برق و کامپیوتر، ساختمان صنایع', room: 'کلاس د' },
                     { title: 'فیزیک ۱', startTime: '09:00', endTime: '10:30', location: 'دانشکده برق و کامپیوتر، ساختمان صنایع', room: 'کلاس د' },
-                    { title: 'زبان فارسی ۱', startTime: '12:00', endTime: '13:30', location: 'دانشکده برق و کامپیوتر، ساختمان برق', room: 'طبقه ۲' }
+                    { title: 'زبان فارسی ۱', startTime: '12:00', endTime: '13:30', location: 'دانشکده برق و کامپیوتر، ساختمان برق', room: 'کلاس ۲۰۸' }
                 ]
             },
             {
@@ -93,7 +93,7 @@ const scheduleData = {
                 classes: [
                     { title: 'ریاضی عمومی ۱', startTime: '07:30', endTime: '09:00', location: 'دانشکده برق و کامپیوتر، ساختمان صنایع', room: 'کلاس د' },
                     { title: 'فیزیک ۱', startTime: '09:00', endTime: '10:30', location: 'دانشکده برق و کامپیوتر، ساختمان صنایع', room: 'کلاس د' },
-                    { title: 'زبان فارسی ۱', startTime: '12:00', endTime: '13:30', location: 'دانشکده برق و کامپیوتر، ساختمان برق', room: 'طبقه ۲' }
+                    { title: 'زبان فارسی ۱', startTime: '12:00', endTime: '13:30', location: 'دانشکده برق و کامپیوتر، ساختمان برق', room: 'کلاس ۲۰۸' }
                 ]
             },
             {
@@ -101,7 +101,7 @@ const scheduleData = {
                 classes: [
                     { title: 'اقتصاد عمومی ۱', startTime: '07:30', endTime: '09:00', location: 'دانشکده صنایع و مکانیک', room: 'کلاس ۲۰۸' },
                     { title: 'نقشه کشی صنعتی', startTime: '09:00', endTime: '10:30', location: 'دانشکده صنایع و مکانیک', room: 'کلاس ۱۱۴' },
-                    { title: 'جبرانی فیزیک ۱', startTime: '15:00', endTime: '18:00', location: 'دانشکده صنایع و مکانیک', room: 'نامشخص' },
+                    { title: 'جبرانی فیزیک ۱', startTime: '15:00', endTime: '18:00', location: 'دانشکده صنایع و مکانیک', room: 'کلاس ۲۰۴' },
                 ]
             },
             {
