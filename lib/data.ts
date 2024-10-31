@@ -31,7 +31,7 @@ const scheduleData = {
             startTime: '13:00',
             endTime: '16:00',
             location: 'دانشکده برق و کامپیوتر، ساختمان صنایع',
-            room: 'نامشخص'
+            room: 'سالن رضایی نژاد'
           }
         ]
       },
@@ -57,7 +57,7 @@ const scheduleData = {
             startTime: '13:30',
             endTime: '15:00',
             location: 'دانشکده برق و کامپیوتر، ساختمان برق',
-            room: 'طبقه ۲'
+            room: 'کلاس ۲۰۸'
           }
         ]
       },
@@ -87,7 +87,7 @@ const scheduleData = {
             startTime: '13:30',
             endTime: '15:00',
             location: 'دانشکده برق و کامپیوتر، ساختمان برق',
-            room: 'طبقه ۲'
+            room: 'کلاس ۲۰۸'
           }
         ]
       },
@@ -110,10 +110,10 @@ const scheduleData = {
           },
           {
             title: 'جبرانی فیزیک ۱',
-            startTime: '15:00',
-            endTime: '18:00',
+            startTime: '13:30',
+            endTime: '16:30',
             location: 'دانشکده صنایع و مکانیک',
-            room: 'نامشخص'
+            room: 'کلاس ۲۰۴'
           }
         ]
       },
@@ -142,7 +142,7 @@ const scheduleData = {
             startTime: '13:00',
             endTime: '16:00',
             location: 'دانشکده برق و کامپیوتر، ساختمان صنایع',
-            room: 'نامشخص'
+            room: 'سالن رضایی نژاد'
           }
         ]
       },
@@ -168,7 +168,7 @@ const scheduleData = {
             startTime: '12:00',
             endTime: '13:30',
             location: 'دانشکده برق و کامپیوتر، ساختمان برق',
-            room: 'طبقه ۲'
+            room: 'کلاس ۲۰۸'
           }
         ]
       },
@@ -198,7 +198,7 @@ const scheduleData = {
             startTime: '12:00',
             endTime: '13:30',
             location: 'دانشکده برق و کامپیوتر، ساختمان برق',
-            room: 'طبقه ۲'
+            room: 'کلاس ۲۰۸'
           }
         ]
       },
@@ -221,10 +221,10 @@ const scheduleData = {
           },
           {
             title: 'جبرانی فیزیک ۱',
-            startTime: '15:00',
-            endTime: '18:00',
+            startTime: '13:30',
+            endTime: '16:30',
             location: 'دانشکده صنایع و مکانیک',
-            room: 'نامشخص'
+            room: 'کلاس ۲۰۴'
           }
         ]
       },
