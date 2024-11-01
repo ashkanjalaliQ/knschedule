@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClassItem } from '@/lib/types';
+import { ClassItem, Day } from '@/lib/types';
 import {
   createGoogleCalendarLink,
   getClassColor,
@@ -16,11 +16,12 @@ interface ClassCardProps {
   classItem: ClassItem;
   index: number;
   isToday: boolean;
+  day: Day;
 }
 
-const ClassCard: React.FC<ClassCardProps> = ({ classItem, index, isToday }) => {
-  const handleAddToGoogleCalendar = () => {
-    const link = createGoogleCalendarLink(classItem);
+const ClassCard: React.FC<ClassCardProps> = ({ classItem, index, isToday, day }) => {
+  const handleAddToGoogleCalendar = (day: Day) => {
+    const link = createGoogleCalendarLink(classItem, day.name);
     window.open(link, '_blank');
   };
   return (
@@ -53,7 +54,7 @@ const ClassCard: React.FC<ClassCardProps> = ({ classItem, index, isToday }) => {
 
           <button
             className="px-3 py-1 text-xs bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-200 hover:shadow-md text-indigo-600 rounded-full transition-all duration-200 focus:ring-1 focus:ring-offset-1 focus:ring-indigo-500 flex items-center group"
-            onClick={handleAddToGoogleCalendar}
+            onClick={() => handleAddToGoogleCalendar(day)}
           >
             <FaCalendarPlus className="ml-1 group-hover:scale-110 transition-transform duration-300" />
             افزودن به گوگل کلندر
