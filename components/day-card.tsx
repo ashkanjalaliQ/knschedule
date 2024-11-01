@@ -35,7 +35,7 @@ const DayCard: React.FC<DayCardProps> = ({ day, isToday }) => {
             </div>
           ) : (
             day.classes.map((classItem, index) => (
-              <ClassCard key={index} classItem={classItem} index={index} isToday={isToday} day={day}/>
+              <ClassCard key={index} classItem={classItem} index={index} isToday={isToday}/>
             ))
           )}
         </div>

@@ -92,37 +92,19 @@ export const formatTimeRange = (start: string, end: string): string => {
   return `${start} - ${end}`;
 };
 
-function getNextDateForDay(dayName: string): Date | null {
-  const targetDayIndex = dayMapping.indexOf(dayName);
-  if (targetDayIndex === -1) return null;
-
-  const today = new Date();
-  const todayIndex = today.getDay();
-  const daysUntilTarget = targetDayIndex >= todayIndex
-    ? targetDayIndex - todayIndex
-    : 7 - (todayIndex - targetDayIndex);
-
-  const nextTargetDate = new Date(today);
-  nextTargetDate.setDate(today.getDate() + daysUntilTarget - 1);
-  
-  return nextTargetDate;
-}
-
-export const createGoogleCalendarLink = (classItem: ClassItem, dayName: string): string => {
+export const createGoogleCalendarLink = (classItem: ClassItem): string => {
   const { title, startTime, endTime, location, room } = classItem;
 
-  const targetDate = getNextDateForDay(dayName);
-  if (!targetDate) throw new Error("Invalid day name");
+  const today = new Date();
 
-  const formatDate = (date: Date, time: string): string => {
-    const [hours, minutes] = time.split(':').map(Number);
-    date.setHours(hours, minutes, 0, 0);
-    const utcDate = new Date(date.getTime() - date.getTimezoneOffset() * 60000);
-    return utcDate.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+  const formatDate = (date: Date, time: string) => {
+    const [hours, minutes] = time.split(':');
+    date.setHours(Number(hours), Number(minutes), 0);
+    return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
   };
 
-  const startDateTime = formatDate(new Date(targetDate), startTime);
-  const endDateTime = formatDate(new Date(targetDate), endTime);
+  const startDateTime = formatDate(new Date(today), startTime);
+  const endDateTime = formatDate(new Date(today), endTime);
 
   return `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDateTime}/${endDateTime}&location=${encodeURIComponent(location + '، ' + room)}&sf=true&output=xml`;
 };
