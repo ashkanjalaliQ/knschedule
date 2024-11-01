@@ -19,7 +19,7 @@ const Timeline: React.FC<TimelineProps> = ({ day, isToday }) => {
         {day.classes.map((classItem, index) => (
           <div
             key={index}
-            className={`absolute h-3 rounded-xl bottom-1 mx-0.5 ${isCurrentClass(classItem) && isToday  ? 'ring-2 ring-yellow-400' : ''}`}
+            className={`absolute h-3 rounded-xl bottom-1 mx-0.5 transition-all duration-300 ease-in-out ${isCurrentClass(classItem) && isToday  ? 'ring-2 ring-yellow-400' : ''}`}
             style={getTimeBlockStyle(classItem, index)}
           />
         ))}
