@@ -243,12 +243,16 @@ function getNextDateForDay(dayName: string): Date | null {
   const targetDayIndex = dayMapping.indexOf(dayName);
   if (targetDayIndex === -1) return null;
 
-  const today = new Date();
-  const todayIndex = today.getDay();
-  const daysUntilTarget = (targetDayIndex - todayIndex + 7) % 7;
-  today.setDate(today.getDate() + daysUntilTarget);
+  const todayIndex = getTodayIndex();
+  const daysUntilTarget =
+    targetDayIndex >= todayIndex
+      ? targetDayIndex - todayIndex
+      : 7 - (todayIndex - targetDayIndex);
 
-  return today;
+  const nextTargetDate = new Date();
+  nextTargetDate.setDate(nextTargetDate.getDate() + daysUntilTarget);
+
+  return nextTargetDate;
 }
 
 /**
