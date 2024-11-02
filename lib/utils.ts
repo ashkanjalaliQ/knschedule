@@ -86,18 +86,6 @@ export const getOrderedSchedule = (schedule: Day[]): Day[] => {
 export const isToday = (index: number): boolean => index === 0;
 
 /**
- * Parses a time string (HH:mm) to a percentage position in the schedule day.
- * @param {string} time - The time in HH:mm format.
- * @returns {number} - Position in the schedule as a percentage.
- */
-const parseTimeToPosition = (time: string): number => {
-  const totalMinutes = convertTimeToMinutes(time);
-  const startOfDay = 7 * 60 + 30;
-  const endOfDay = 18 * 60;
-  return ((totalMinutes - startOfDay) / (endOfDay - startOfDay)) * 100;
-};
-
-/**
  * Returns the color for a class based on index.
  * @param {number} index - Index of the class.
  * @returns {string} - Corresponding color.
