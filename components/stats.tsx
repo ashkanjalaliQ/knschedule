@@ -47,7 +47,7 @@ const Stats: React.FC<StatsProps> = ({ gender }) => {
   }, [gender]);
 
   return (
-    <div className="glass-effect rounded-2xl soft-shadow p-6 mb-8 fade-in hover:shadow-lg transition-all duration-300">
+    <div className="bg-white dark:bg-gray-900 rounded-2xl soft-shadow p-6 mb-8 fade-in hover:shadow-lg transition-all duration-300">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <StatsItem
           label="ساعات کلاسی هفته"

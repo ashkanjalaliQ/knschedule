@@ -12,7 +12,7 @@ interface DayCardProps {
 const DayCard: React.FC<DayCardProps> = ({ day, isToday }) => {
   return (
     <div
-      className={`rounded-2xl overflow-hidden slide-in glass-effect ${isToday ? 'ring-2 ring-yellow-300' : ''}`}
+      className={`rounded-2xl overflow-hidden slide-in bg-white dark:bg-gray-900 ${isToday ? 'ring-2 ring-yellow-300' : ''}`}
     >
       <div className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white p-4">
         <div className="flex items-center justify-between">

@@ -26,9 +26,8 @@ export default function Home() {
   }, []);
   return (
     <div className="container mx-auto p-4">
-      <Header />
+      <Header gender={gender} setGender={setGender} />
       <Stats gender={gender} />
-      <Actions gender={gender} setGender={setGender} />
       <Schedule gender={gender} scheduleData={scheduleData}/>
     </div>
   );

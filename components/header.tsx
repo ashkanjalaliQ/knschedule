@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
+import { Dispatch, SetStateAction } from 'react';
+import Actions from './actions';
 
-const Header = () => {
+interface ActionsProps {
+  gender: 'boys' | 'girls';
+  setGender: Dispatch<SetStateAction<'boys' | 'girls'>>;
+}
+
+const Header: React.FC<ActionsProps> = ({gender, setGender}) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -25,19 +32,38 @@ const Header = () => {
   };
 
   return (
-    <header className="text-center mb-8 fade-in">
-      <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-800 dark:from-indigo-400 dark:to-indigo-500 bg-clip-text text-transparent mb-2">
-        برنامه هفتگی صنایع
-      </h1>
-      <p className="text-gray-600 dark:text-gray-200">ترم اول ۱۴۰۴-۱۴۰۳</p>
-      <button
-        onClick={toggleDarkMode}
-        aria-label='Toggle Dark Mode'
-        className="absolute top-0 left-0 m-6 p-2 z-50 bg-gray-100 dark:bg-gray-900 rounded-full shadow-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition duration-100 ease-in-out focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-      >
-        {isDarkMode ? <FaMoon/> : <FaSun/>}
-      </button>
-    </header>
+    <div className="w-full py-4">
+      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden">
+        {/* Top Bar with Actions and Dark Mode Toggle */}
+        <div className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 backdrop-blur-sm">
+          <div className="flex items-center justify-between h-16 px-6">
+            <Actions gender={gender} setGender={setGender}/>
+            <button
+              onClick={toggleDarkMode}
+              aria-label="Toggle Dark Mode"
+              className="group p-2.5 rounded-full bg-white/10 hover:bg-white/20
+                       transition-all duration-300 ease-in-out focus:outline-none flex items-center justify-center"
+            >
+              {isDarkMode ? (
+                <FaMoon className="text-white text-lg transform transition-transform duration-300 group-hover:rotate-12" />
+              ) : (
+                <FaSun className="text-white text-lg transform transition-transform duration-300 group-hover:rotate-90" />
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Title Section */}
+        <div className="w-full bg-white dark:bg-gray-900 py-8 px-6 text-center">
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+            برنامه هفتگی صنایع
+          </h1>
+          <p className="text-gray-600 dark:text-gray-300 text-lg">
+            ترم اول ۱۴۰۴-۱۴۰۳
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 
