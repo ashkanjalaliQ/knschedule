@@ -105,10 +105,12 @@
   @apply animate-[slideIn_0.5s_ease-out];
 }
 .timeline-grid {
-  @apply bg-[linear-gradient(_to_left,rgba(229,231,235,0.5)_1px,transparent_1px_)] bg-[calc(100%_/_12)_100%] relative transition-all duration-300 ease-in;
+  background-image: linear-gradient(to left, rgba(229, 231, 235, 0.5) 1px, transparent 1px);
+  background-size: calc(100% / 10) 100%;
 }
 .dark .timeline-grid {
-  @apply bg-[linear-gradient(_to_left,rgba(55,65,81,0.5)_1px,transparent_1px_)];
+  background-image: linear-gradient(to left, rgba(55,65,81,0.5) 1px, transparent 1px);
+  background-size: calc(100% / 10) 100%;
 }
 .hover-scale {
   @apply transition-transform duration-200 ease-in-out hover:scale-[1.02];
