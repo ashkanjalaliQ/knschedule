@@ -1,5 +1,4 @@
 'use client';
-import Actions from '@/components/actions';
 import Header from '@/components/header';
 import Schedule from '@/components/schedule';
 import Stats from '@/components/stats';
