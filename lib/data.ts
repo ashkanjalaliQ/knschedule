@@ -113,7 +113,7 @@ const scheduleData = {
             startTime: '13:30',
             endTime: '16:30',
             location: 'دانشکده صنایع و مکانیک',
-            room: 'کلاس ۲۰۴'
+            room: 'کلاس ۳۰۵'
           }
         ]
       },
@@ -224,7 +224,7 @@ const scheduleData = {
             startTime: '13:30',
             endTime: '16:30',
             location: 'دانشکده صنایع و مکانیک',
-            room: 'کلاس ۲۰۴'
+            room: 'کلاس ۳۰۵'
           }
         ]
       },
