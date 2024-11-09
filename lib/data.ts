@@ -28,8 +28,8 @@ const scheduleData = {
           },
           {
             title: 'جبرانی ریاضی عمومی ۱',
-            startTime: '13:00',
-            endTime: '16:00',
+            startTime: '14:30',
+            endTime: '17:30',
             location: 'دانشکده برق و کامپیوتر، ساختمان صنایع',
             room: 'سالن رضایی نژاد'
           }
@@ -139,8 +139,8 @@ const scheduleData = {
           },
           {
             title: 'جبرانی ریاضی عمومی ۱',
-            startTime: '13:00',
-            endTime: '16:00',
+            startTime: '14:30',
+            endTime: '17:30',
             location: 'دانشکده برق و کامپیوتر، ساختمان صنایع',
             room: 'سالن رضایی نژاد'
           }
