@@ -3,12 +3,7 @@ import { FaMoon, FaSun } from 'react-icons/fa';
 import { Dispatch, SetStateAction } from 'react';
 import Actions from './actions';
 
-interface ActionsProps {
-  gender: 'boys' | 'girls';
-  setGender: Dispatch<SetStateAction<'boys' | 'girls'>>;
-}
-
-const Header: React.FC<ActionsProps> = ({gender, setGender}) => {
+const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -37,7 +32,7 @@ const Header: React.FC<ActionsProps> = ({gender, setGender}) => {
         {/* Top Bar with Actions and Dark Mode Toggle */}
         <div className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 backdrop-blur-sm">
           <div className="flex items-center justify-between h-16 px-6">
-            <Actions gender={gender} setGender={setGender}/>
+            <Actions/>
             <button
               onClick={toggleDarkMode}
               aria-label="Toggle Dark Mode"

@@ -3,6 +3,7 @@ import './globals.css';
 
 import { Vazirmatn } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import { GenderProvider } from '@/lib/gender';
 
 export const metadata: Metadata = {
   title: 'برنامه هفتگی صنایع',
@@ -23,16 +24,18 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        dir="rtl"
-        className={cn(
-          'min-h-screen bg-gradient-to-br from-blue-200 via-indigo-100 to-gray-100 dark:from-gray-800 dark:to-gray-700 transition-colors duration-300',
-          font.className
-        )}
-      >
-        {children}
-      </body>
-    </html>
+    <GenderProvider>
+      <html lang="en">
+        <body
+          dir="rtl"
+          className={cn(
+            'min-h-screen bg-gradient-to-br from-blue-200 via-indigo-100 to-gray-100 dark:from-gray-800 dark:to-gray-700 transition-colors duration-300',
+            font.className
+          )}
+        >
+          {children}
+        </body>
+      </html>
+    </GenderProvider>
   );
 }

@@ -2,9 +2,9 @@ import React from 'react';
 import DayCard from './day-card';
 import scheduleData from '../lib/data';
 import { getOrderedSchedule, isToday } from '@/lib/utils';
+import { useGender } from '@/lib/gender';
 
 type ScheduleProps = {
-  gender: 'boys' | 'girls'; 
   scheduleData: typeof scheduleData;
 };
 
@@ -16,7 +16,8 @@ export const getStaticProps = async () => {
   };
 };
 
-const Schedule: React.FC<ScheduleProps> = ({ gender, scheduleData }) => {
+const Schedule: React.FC<ScheduleProps> = ({ scheduleData }) => {
+  const { gender } = useGender();
   const schedule = getOrderedSchedule(scheduleData.schedule[gender]);
 
   return (

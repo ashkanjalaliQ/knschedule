@@ -9,12 +9,11 @@ import {
 import { useState, useEffect } from 'react';
 import StatsItem from './stats-item';
 import { ClassItem } from '@/lib/types';
+import { useGender } from '@/lib/gender';
 
-interface StatsProps {
-  gender: 'boys' | 'girls';
-}
 
-const Stats: React.FC<StatsProps> = ({ gender }) => {
+const Stats = () => {
+  const { gender } = useGender();
   const [totalClassDuration, setTotalClassDuration] = useState<string | null>(
     null
   );
