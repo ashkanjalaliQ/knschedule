@@ -7,7 +7,7 @@ import { getGenderFromLocalStorage } from '@/lib/storage';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const [gender, setGender] = useState<'boys' | 'girls'>('boys');
+  const [, setGender] = useState<'boys' | 'girls'>('boys');
 
   useEffect(() => {
     const storedGender = getGenderFromLocalStorage();

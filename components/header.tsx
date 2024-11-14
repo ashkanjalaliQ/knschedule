@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
-import { Dispatch, SetStateAction } from 'react';
 import Actions from './actions';
 
 const Header = () => {
