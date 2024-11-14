@@ -109,6 +109,13 @@ const scheduleData = {
             room: 'کلاس ۱۱۴'
           },
           {
+            title: 'حل تمرین فیزیک 1',
+            startTime: '12:30',
+            endTime: '13:30',
+            location: 'دانشکده صنایع و مکانیک',
+            room: 'کلاس ۲۰۵'
+          },
+          {
             title: 'جبرانی فیزیک ۱',
             startTime: '13:30',
             endTime: '16:30',
@@ -218,6 +225,13 @@ const scheduleData = {
             endTime: '10:30',
             location: 'دانشکده صنایع و مکانیک',
             room: 'کلاس ۱۱۴'
+          },
+          {
+            title: 'حل تمرین فیزیک 1',
+            startTime: '12:30',
+            endTime: '13:30',
+            location: 'دانشکده صنایع و مکانیک',
+            room: 'کلاس ۲۰۵'
           },
           {
             title: 'جبرانی فیزیک ۱',
