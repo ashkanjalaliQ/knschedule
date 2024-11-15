@@ -30,7 +30,7 @@ const scheduleData = {
             title: 'جبرانی ریاضی عمومی ۱',
             startTime: '14:30',
             endTime: '17:30',
-            location: 'دانشکده برق و کامپیوتر، ساختمان صنایع',
+            location: 'دانشکده برق',
             room: 'سالن رضایی نژاد'
           }
         ]
@@ -56,8 +56,8 @@ const scheduleData = {
             title: 'زبان فارسی ۱',
             startTime: '13:30',
             endTime: '15:00',
-            location: 'دانشکده برق و کامپیوتر، ساختمان برق',
-            room: 'کلاس ۲۰۸'
+            location: 'دانشکده برق و کامپیوتر، ساختمان صنایع',
+            room: 'کلاس ج'
           }
         ]
       },
@@ -86,8 +86,8 @@ const scheduleData = {
             title: 'زبان فارسی ۱',
             startTime: '13:30',
             endTime: '15:00',
-            location: 'دانشکده برق و کامپیوتر، ساختمان برق',
-            room: 'کلاس ۲۰۸'
+            location: 'دانشکده برق و کامپیوتر، ساختمان صنایع',
+            room: 'کلاس ج'
           }
         ]
       },
@@ -148,7 +148,7 @@ const scheduleData = {
             title: 'جبرانی ریاضی عمومی ۱',
             startTime: '14:30',
             endTime: '17:30',
-            location: 'دانشکده برق و کامپیوتر، ساختمان صنایع',
+            location: 'دانشکده برق',
             room: 'سالن رضایی نژاد'
           }
         ]
@@ -174,7 +174,7 @@ const scheduleData = {
             title: 'زبان فارسی ۱',
             startTime: '12:00',
             endTime: '13:30',
-            location: 'دانشکده برق و کامپیوتر، ساختمان برق',
+            location: 'دانشکده برق',
             room: 'کلاس ۲۰۸'
           }
         ]
@@ -204,7 +204,7 @@ const scheduleData = {
             title: 'زبان فارسی ۱',
             startTime: '12:00',
             endTime: '13:30',
-            location: 'دانشکده برق و کامپیوتر، ساختمان برق',
+            location: 'دانشکده برق',
             room: 'کلاس ۲۰۸'
           }
         ]
