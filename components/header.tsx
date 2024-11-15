@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <div className="w-full py-4">
-      <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden">
+      <div className="bg-white dark:bg-gray-900 fade-in rounded-2xl shadow-lg overflow-hidden">
         {/* Top Bar with Actions and Dark Mode Toggle */}
         <div className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700 backdrop-blur-sm">
           <div className="flex items-center justify-between h-16 px-6">
